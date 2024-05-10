@@ -142,3 +142,73 @@ productButton.addEventListener("click", () => {
 close.addEventListener("click", () => {
   payment.style.display = "none";
 });
+
+//function to validate email format
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+//function to validate card number format
+function validateCardNumber(cardNumber) {
+    const cardNumberRegex = /^\d{16}$/;
+    return cardNumberRegex.test(cardNumber);
+}
+
+//function to validate name format
+function validateName(name) {
+    const nameRegex = /[a-zA-Z]/;
+    return nameRegex.test(name);
+}
+
+//function to validate phone number format
+function validatePhoneNumber(phoneNumber) {
+    const phoneRegex = /^\+?[0-9\s]+$/;
+    return phoneRegex.test(phoneNumber);
+}
+
+//validate payment information when checkout button is clicked
+const checkoutButton = document.querySelector(".payButton");
+checkoutButton.addEventListener("click", () => {
+    const nameInput = document.querySelector(".payInput[placeholder='Ciprian Vasile']");
+    const phoneNumberInput = document.querySelector(".payInput[placeholder='+40 773 123 456']");
+    const emailInput = document.querySelector(".payInput[type='text'][placeholder='abc@mail.com']");
+    const cardNumberInput = document.querySelector(".payInput[placeholder='Card Number']");
+
+    const email = emailInput.value;
+    const cardNumber = cardNumberInput.value;
+    const name = nameInput.value;
+    const phoneNumber = phoneNumberInput.value;
+
+    //validate name and phone number
+    if (!validateName(name)) {
+      alert("Please enter a valid name.");
+      return;
+  }
+
+  if (!validatePhoneNumber(phoneNumber)) {
+      alert("Please enter a valid phone number.");
+      return;
+  }
+    //validate email and card number
+    if (!validateEmail(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    if (!validateCardNumber(cardNumber)) {
+        alert("Please enter a valid 16-digit card number.");
+        return;
+    }
+
+
+    const confirmationMessage = "Your payment has been processed successfully!";
+    alert(confirmationMessage);
+
+    //close the payment modal
+    const paymentModal = document.querySelector(".payment");
+    paymentModal.style.display = "none";
+});
+
+
+

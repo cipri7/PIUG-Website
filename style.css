@@ -200,7 +200,7 @@ html {
   
   .payment {
     width: 500px;
-    height: 500px;
+    height: 550px;
     background-color: white;
     position: absolute;
     top: 0;
@@ -225,7 +225,7 @@ html {
     font-weight: 300;
   }
   
-  .payInput {
+  .payInput{
     padding: 10px;
     margin: 10px 0px;
     border: none;
