@@ -1,5 +1,5 @@
 # Sneaker Store Website
-### [Website](ciprianvasile.tech)
+### [Website](www.ciprianvasile.tech)
 
 <img width="1424" alt="Captură de ecran din 2024-05-11 la 12 30 02" src="https://github.com/cipri7/PIUG-Website/assets/102433321/660d859d-92b9-4bfa-8131-8df5634da820">
 
